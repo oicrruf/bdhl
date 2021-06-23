@@ -33,3 +33,7 @@ ion-button {
   --padding-top: 30px;
   --padding-bottom: 30px;
 }
+ion-toolbar {
+  border: none;
+  border-bottom: 3px solid var(--ion-color-primary);
+}
