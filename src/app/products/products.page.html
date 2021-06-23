@@ -1,0 +1,82 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title>Mis productos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding class="p-my-products">
+    <ion-text color="dark">
+      <h1>Mis tarjetas</h1>
+    </ion-text>
+    <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+      <ion-slide *ngFor="let card of [0,1,2,3,4,5,6]" style="width: 200px;">
+        <ion-col class="m-credit-shadown"></ion-col>
+        <ion-col class="m-credit-card">
+          <ion-row class="a-credit-title">
+            <ion-img class="a-credit-title -imagotipo" style="pointer-events:none"
+              src="assets/images/logos/imagotipo-white.svg"></ion-img>
+            <ion-text class="a-credit-title -card-number">**** 000{{ card }}</ion-text>
+          </ion-row>
+          <ion-row class="a-credit-detail">
+            <ion-text class="a-credit-detail -coin">RD$ 100,000.<small>00</small></ion-text>
+            <ion-text class="a-credit-detail -coin">US$ 100,000.<small>00</small></ion-text>
+          </ion-row>
+          <ion-row class="a-credit-footer">
+            <ion-img class="a-credit-footer -partner" style="pointer-events:none"
+              src="assets/images/partners/mastercard.svg"></ion-img>
+          </ion-row>
+        </ion-col>
+      </ion-slide>
+    </ion-slides>
+    <ion-text color="dark">
+      <h1>Transacciones</h1>
+    </ion-text>
+    <ion-list class="m-transaction">
+      <ion-item lines="none">
+        <ion-icon name="arrow-down-outline" class="a-transaction -down"></ion-icon>
+        <ion-label>Pago en tienda</ion-label>
+        <ion-text class="a-transaction -amount -down">-RD$ 3000.00 </ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="arrow-down-outline" class="a-transaction -down"></ion-icon>
+        <ion-label>Pago en tienda</ion-label>
+        <ion-text class="a-transaction -amount -down">-RD$ 3000.00 </ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="arrow-up-outline" class="a-transaction -up"></ion-icon>
+        <ion-label>Pago TC</ion-label>
+        <ion-text class="a-transaction -amount -up">-RD$ 3000.00 </ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="arrow-up-outline" class="a-transaction -up"></ion-icon>
+        <ion-label>Pago TC</ion-label>
+        <ion-text class="a-transaction -amount -up">-RD$ 3000.00 </ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="arrow-up-outline" class="a-transaction -up"></ion-icon>
+        <ion-label>Pago TC</ion-label>
+        <ion-text class="a-transaction -amount -up">-RD$ 3000.00 </ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="arrow-up-outline" class="a-transaction -up"></ion-icon>
+        <ion-label>Pago TC</ion-label>
+        <ion-text class="a-transaction -amount -up">-RD$ 3000.00 </ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="arrow-down-outline" class="a-transaction -down"></ion-icon>
+        <ion-label>Pago en tienda</ion-label>
+        <ion-text class="a-transaction -amount -down">-RD$ 3000.00 </ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="arrow-up-outline" class="a-transaction -up"></ion-icon>
+        <ion-label>Pago TC</ion-label>
+        <ion-text class="a-transaction -amount -down">-RD$ 3000.00 </ion-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="arrow-down-outline" class="a-transaction -down"></ion-icon>
+        <ion-label>Pago en tienda</ion-label>
+        <ion-text class="a-transaction -amount -down">-RD$ 3000.00 </ion-text>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-content>

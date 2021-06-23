@@ -1,4 +1,4 @@
-@import "../../theme/variables.scss";
+@import '../../theme/variables.scss';
 
 ion-tab-button:first-child {
   border-top-left-radius: 20px;
@@ -7,7 +7,7 @@ ion-tab-button:last-child {
   border-top-right-radius: 20px;
 }
 ion-tabs{
-  background: $white;
+  background-color: $white;
 }
 ion-tab-bar {
   height: 10vh;
