@@ -1,0 +1,18 @@
+<ion-content>
+  <div class="p-login__container">
+    <div class="m-login__container-header">
+    </div>
+    <div class="m-login__container-form">
+      <ion-input placeholder="Número de cédula" class="a-login__container-form -input-text"></ion-input>
+      <ion-input placeholder="Contraseña" class="a-login__container-form -input-text" type="password"></ion-input>
+      <div class="a-login__container-form -toggle">
+        <ion-toggle [(ngModel)]="remind" color="primary"></ion-toggle>
+        <ion-label>Recordarme</ion-label>
+      </div>
+      <ion-button color="primary">Iniciar sesión</ion-button>
+    </div>
+    <div class="m-login__container-footer">
+      <div class="m-form__gradiant"></div>
+    </div>
+  </div>
+</ion-content>
