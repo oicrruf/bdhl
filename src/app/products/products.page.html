@@ -6,10 +6,10 @@
   </ion-header>
   <ion-content padding class="p-my-products">
     <ion-text color="dark">
-      <h1>Mis tarjetas</h1>
+      <h4>Mis tarjetas</h4>
     </ion-text>
     <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
-      <ion-slide *ngFor="let card of [{number: 0, partner: 'mastercard'}, {number: 1, partner: 'visa'}]" style="width: 200px;">
+      <ion-slide *ngFor="let card of [{number: 0, partner: 'mastercard'}, {number: 1, partner: 'visa'}, {number: 2, partner: 'mastercard'}]" style="width: 200px;">
         <ion-col class="m-credit-shadown -{{card.partner}}"></ion-col>
         <ion-col class="m-credit-card -{{card.partner}}">
           <a href="/card/{{card.number}}">
@@ -31,7 +31,7 @@
       </ion-slide>
     </ion-slides>
     <ion-text color="dark">
-      <h1>Transacciones</h1>
+      <h4>Transacciones</h4>
     </ion-text>
     <ion-list class="m-transaction">
       <ion-item lines="none">

@@ -25,6 +25,16 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@font-face {
+  font-family: "TrebuchetMS";
+  font-style: normal;
+  src: url("./assets/fonts/TrebuchetMS.ttf"); /* IE9 Compat Modes */
+}
+
+* {
+  font-family: "TrebuchetMS", sans-serif;
+}
+
 ion-input {
   border: solid 1px #c9c9c9;
 }

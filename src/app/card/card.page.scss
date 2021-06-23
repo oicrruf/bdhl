@@ -80,22 +80,22 @@ ion-col {
     border: none;
     border-radius: 15px;
     --background: #d7d7d7;
-    & .progress{
+    & .progress {
       border-radius: 15px;
     }
   }
   & .a-to-pay__text {
     margin: 0;
     &.-consumed,
-    &.-available{
+    &.-available {
       font-size: 0.8rem;
       margin-bottom: 0;
     }
-    &.-available{
+    &.-available {
       color: green;
     }
   }
-  & ion-button{
+  & ion-button {
     margin-top: 40px;
     width: 90vw;
   }
