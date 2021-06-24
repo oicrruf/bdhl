@@ -5,10 +5,9 @@
   height: 100vh;
   & .m-login__container-header {
     height: 30vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0 15vw;
-    background-image: url("../../assets/images/logos/color.svg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   & .m-login__container-form {
     display: flex;
@@ -28,7 +27,7 @@
       margin-bottom: 20px;
       display: flex;
       align-items: center;
-      & ion-label{
+      & ion-label {
         margin-left: 10px;
       }
     }

@@ -1,47 +1,40 @@
 @import "../../theme/variables.scss";
 
-.p-my-products {
-  ion-text {
-    & h4 {
-      color: #5f5f5f;
-      font-size: 1.2rem;
-      margin: 0;
-      margin-top: 15px;
-      padding: 0 25px;
-    }
-  }
+.a-title-content{
+  color: #5f5f5f;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 30px 0px;
+  padding: 0 25px;
 }
-
 ion-scroll {
   white-space: nowrap;
   height: 250px;
 }
 ion-col {
-  margin-top: 15px;
   margin-left: 15px;
   height: 250px;
-  width: 150px;
+  width: 200px;
   color: $white;
   border-radius: 20px;
 }
 .m-credit-shadown {
-  &.-mastercard {
-    background-color: #01B223;
+  &.-Mastercard {
+    background-color: $background-card-green;
   }
-  &.-visa {
-    background-color: #84581f;
+  &.-Visa {
+    background-color: $background-card-brown;
   }
-  height: 240px;
-  margin-top: 25px;
+  height: 250px;
   width: 185px;
   position: absolute;
 }
 .m-credit-card {
-  &.-mastercard {
-    background-color: #28BC3F;
+  &.-Mastercard {
+    background-color: $green;
   }
-  &.-visa {
-    background-color: #b87b2c;
+  &.-Visa {
+    background-color: $brown;
   }
   display: flex;
   flex-direction: column;
@@ -69,10 +62,15 @@ ion-col {
       }
     }
     & .a-credit-detail {
-      display: block;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
       & .-coin {
         margin: 10px 0;
         text-align: center;
+        & small {
+          margin-bottom: 1px;
+        }
       }
     }
     & .a-credit-footer {
@@ -85,7 +83,6 @@ ion-col {
     }
   }
 }
-
 .m-transaction {
   margin-top: 20px;
   margin-bottom: 50px;
@@ -94,7 +91,24 @@ ion-col {
     justify-content: space-between;
     margin-bottom: 20px;
   }
+  & .a-transaction__row{
+    display: grid;
+    grid-template-columns: 15% 50% 35%;
+    width: 100%;
+    & .a-transaction__type{
+      width: max-content;
+      & ion-label{
+        font-family: "TrebuchetMS", sans-serif;
+        color: $gray;
+      }
+      & .-date {
+        color: $gray-ligth;
+        font-size: 0.8rem;
+      }
+    }
+  }
   & .a-transaction {
+
     &.-up,
     &.-down {
       padding: 10px;
@@ -102,23 +116,24 @@ ion-col {
       border-radius: 10px;
     }
     &.-up {
-      color: #01b223;
-      background-color: #e7f1e8;
+      color: $background-card-green;
+      background-color: $green-light;
     }
     &.-amount.-down {
-      color: #d0335b;
+      color: $red;
       font-weight: bold;
     }
     &.-amount.-up {
-      color: #01b223;
+      color: $background-card-green;
       font-weight: bold;
     }
     &.-down {
-      color: #d0335b;
-      background-color: #f4e6e9;
+      color: $red;
+      background-color: $red-light;
     }
     &.-amount {
       background-color: #fff;
+      text-align: right;
     }
   }
 }

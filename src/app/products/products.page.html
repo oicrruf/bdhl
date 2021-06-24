@@ -6,79 +6,50 @@
   </ion-header>
   <ion-content padding class="p-my-products">
     <ion-text color="dark">
-      <h4>Mis tarjetas</h4>
+      <h4 class="a-title-content">Mis tarjetas</h4>
     </ion-text>
     <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
-      <ion-slide *ngFor="let card of [{number: 0, partner: 'mastercard'}, {number: 1, partner: 'visa'}, {number: 2, partner: 'mastercard'}]" style="width: 200px;">
-        <ion-col class="m-credit-shadown -{{card.partner}}"></ion-col>
-        <ion-col class="m-credit-card -{{card.partner}}">
-          <a href="/card/{{card.number}}">
+      <ion-slide *ngFor="let card of products" style="width: 200px;">
+        <ion-col class="m-credit-shadown -{{card.productBrand}}"></ion-col>
+        <ion-col class="m-credit-card -{{card.productBrand}}">
+          <a href="/card/{{card.productNumber}}">
             <ion-row class="a-credit-title">
               <ion-img class="a-credit-title -imagotipo" style="pointer-events:none"
                 src="assets/images/logos/imagotipo-white.svg"></ion-img>
-              <ion-text class="a-credit-title -card-number">**** 000{{ card.number }}</ion-text>
+              <ion-text class="a-credit-title -card-number">**** {{ card.productNumber.slice(-4) }}</ion-text>
             </ion-row>
             <ion-row class="a-credit-detail">
-              <ion-text class="a-credit-detail -coin">RD$ 100,000.<small>00</small></ion-text>
-              <ion-text class="a-credit-detail -coin">US$ 100,000.<small>00</small></ion-text>
+              <ion-text class="a-credit-detail -coin">RD$ {{card.LimitRD}}.<small>00</small></ion-text>
+              <ion-text class="a-credit-detail -coin">US$ {{card.LimitUS}}.<small>00</small></ion-text>
             </ion-row>
             <ion-row class="a-credit-footer">
               <ion-img class="a-credit-footer -partner" style="pointer-events:none"
-                src="assets/images/partners/{{card.partner}}.svg"></ion-img>
+                src="assets/images/partners/{{card.productBrand}}.svg"></ion-img>
             </ion-row>
           </a>
         </ion-col>
       </ion-slide>
     </ion-slides>
     <ion-text color="dark">
-      <h4>Transacciones</h4>
+      <h4 class="a-title-content">Transacciones</h4>
     </ion-text>
     <ion-list class="m-transaction">
-      <ion-item lines="none">
-        <ion-icon name="arrow-down-outline" class="a-transaction -down"></ion-icon>
-        <ion-label>Pago en tienda</ion-label>
-        <ion-text class="a-transaction -amount -down">-RD$ 3000.00 </ion-text>
+      <ion-item lines="none" *ngFor="let move of movements">
+        <ion-row class="a-transaction__row">
+          <ion-icon name="arrow-{{move.transactionType === 1 ? 'down' : 'up'}}-outline"
+            class="a-transaction {{move.transactionType === 1 ? '-down' : '-up'}}"></ion-icon>
+          <div class="a-transaction__type">
+            <ion-label>{{move.description}}</ion-label>
+            <ion-label class="a-transaction__type -date">{{move.date | date: 'dd MMM'}}</ion-label>
+          </div>
+          <ion-text class="a-transaction -amount {{move.transactionType === 1 ? '-down' : '-up'}}">
+            {{move.transactionType === 1 ? '-' : ''}}RD$ {{move.amount}} </ion-text>
+        </ion-row>
+
+
+
       </ion-item>
-      <ion-item lines="none">
-        <ion-icon name="arrow-down-outline" class="a-transaction -down"></ion-icon>
-        <ion-label>Pago en tienda</ion-label>
-        <ion-text class="a-transaction -amount -down">-RD$ 3000.00 </ion-text>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-icon name="arrow-up-outline" class="a-transaction -up"></ion-icon>
-        <ion-label>Pago TC</ion-label>
-        <ion-text class="a-transaction -amount -up">-RD$ 3000.00 </ion-text>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-icon name="arrow-up-outline" class="a-transaction -up"></ion-icon>
-        <ion-label>Pago TC</ion-label>
-        <ion-text class="a-transaction -amount -up">-RD$ 3000.00 </ion-text>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-icon name="arrow-up-outline" class="a-transaction -up"></ion-icon>
-        <ion-label>Pago TC</ion-label>
-        <ion-text class="a-transaction -amount -up">-RD$ 3000.00 </ion-text>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-icon name="arrow-up-outline" class="a-transaction -up"></ion-icon>
-        <ion-label>Pago TC</ion-label>
-        <ion-text class="a-transaction -amount -up">-RD$ 3000.00 </ion-text>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-icon name="arrow-down-outline" class="a-transaction -down"></ion-icon>
-        <ion-label>Pago en tienda</ion-label>
-        <ion-text class="a-transaction -amount -down">-RD$ 3000.00 </ion-text>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-icon name="arrow-up-outline" class="a-transaction -up"></ion-icon>
-        <ion-label>Pago TC</ion-label>
-        <ion-text class="a-transaction -amount -down">-RD$ 3000.00 </ion-text>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-icon name="arrow-down-outline" class="a-transaction -down"></ion-icon>
-        <ion-label>Pago en tienda</ion-label>
-        <ion-text class="a-transaction -amount -down">-RD$ 3000.00 </ion-text>
-      </ion-item>
+
     </ion-list>
   </ion-content>
 </ion-content>

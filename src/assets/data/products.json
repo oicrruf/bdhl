@@ -1,0 +1,40 @@
+[
+  {
+    "productNumber": "4916975561792563",
+    "productBrand": "Visa",
+    "LimitRD": 100000,
+    "BalanceRD": 5000,
+    "LimitUS": 1000,
+    "BalanceUS": 200,
+    "clientName": "Juan Maria Soto Perez",
+    "productEndingDate": "03/2021"
+  },
+  {
+    "productNumber": "5490064291992362",
+    "productBrand": "Mastercard",
+    "LimitRD": 30000,
+    "BalanceRD": 3000,
+    "LimitUS": 1000,
+    "BalanceUS": 75.04,
+    "clientName": "Juan Maria Soto Perez",
+    "productEndingDate": "02/2021"
+  },
+  {
+    "productNumber": "4556180834548869",
+    "productBrand": "Visa",
+    "LimitRD": 10000,
+    "BalanceRD": 4560.5,
+    "LimitUS": 10000,
+    "BalanceUS": 2000,
+    "clientName": "Juan Maria Soto Perez",
+    "productEndingDate": "05/2021"
+  },
+  {
+    "productNumber": "2720997399984162",
+    "productBrand": "Mastercard",
+    "LimitRD": 1000000,
+    "BalanceRD": 40000,
+    "clientName": "Juan Maria Soto Perez",
+    "productEndingDate": "06/2021"
+  }
+]
