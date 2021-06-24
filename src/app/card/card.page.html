@@ -3,29 +3,33 @@
     <ion-title>Detalle del producto</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content *ngIf="card">
   <ion-row>
-    <ion-col class="m-credit-shadown -visa"></ion-col>
-    <ion-col class="m-credit-card -visa">
+    <ion-col class="m-credit-shadown -{{card.productBrand | lowercase}}"></ion-col>
+    <ion-col class="m-credit-card -{{card.productBrand | lowercase}}">
       <ion-row class="a-credit-title">
         <ion-img class="a-credit-title -imagotipo" style="pointer-events:none"
           src="assets/images/logos/vertical-white.svg"></ion-img>
-        <ion-img class="a-credit-title -partner" style="pointer-events:none" src="assets/images/partners/visa.svg">
+        <ion-img class="a-credit-title -partner" style="pointer-events:none"
+          src="assets/images/partners/{{card.productBrand | lowercase}}.svg">
         </ion-img>
       </ion-row>
       <ion-row class="a-credit-detail">
-        <ion-text class="a-credit-title -card-number">7859 0168 2021 000{{ id }}</ion-text>
+        <ion-text class="a-credit-title -card-number">
+          {{ card.productNumber.slice(0, 4) }} {{ card.productNumber.slice(4,8) }} {{ card.productNumber.slice(8,12) }}
+          {{card.productNumber.slice(12, 16) }}
+        </ion-text>
       </ion-row>
       <ion-row class="a-credit-footer">
         <ion-col>
-          <ion-text class="a-credit-title -card-number">Jhon Doe</ion-text>
+          <ion-text class="a-credit-title -card-number">{{ card.clientName }}</ion-text>
         </ion-col>
-        <ion-col>
+        <ion-col-4>
           <ion-text class="a-credit-title -card-number">
             <small>F. de Ven</small>
           </ion-text>
-          <ion-text class="a-credit-title -card-number">22/25</ion-text>
-        </ion-col>
+          <ion-text class="a-credit-title -card-number">{{ card.productEndingDate }}</ion-text>
+        </ion-col-4>
       </ion-row>
     </ion-col>
   </ion-row>
@@ -42,25 +46,25 @@
     </ion-row>
     <ion-col class="a-to-pay">
       <ion-row>
-        <ion-progress-bar class="a-to-pay -progress-bar" value="0.3"></ion-progress-bar>
+        <ion-progress-bar class="a-to-pay -progress-bar" value="{{ (card.BalanceRD/card.LimitRD) }}"></ion-progress-bar>
       </ion-row>
       <ion-row>
         <ion-col>
           <div class="ion-text-start">
-            <h6 class="a-to-pay__text -consumed">RD$ 42,000.00</h6>
+            <h6 class="a-to-pay__text -consumed">RD$ {{ card.BalanceRD }}</h6>
             <small>Consumido</small>
           </div>
         </ion-col>
-        <ion-col >
+        <ion-col>
           <div class="ion-text-end">
-            <h6 class="a-to-pay__text -available">RD$ 58,000.00</h6>
+            <h6 class="a-to-pay__text -available">RD$ {{ card.LimitRD }}</h6>
             <small>Disponible</small>
           </div>
         </ion-col>
       </ion-row>
     </ion-col>
     <ion-row class="a-to-pay">
-        <ion-button (click)="pay()" shape="round" fill="outline">Pagar</ion-button>
+      <ion-button (click)="pay()" shape="round" fill="outline">Pagar</ion-button>
     </ion-row>
   </ion-col>
 </ion-content>

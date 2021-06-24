@@ -1,24 +1,30 @@
+@import '../../theme/variables.scss';
+
 #container {
   text-align: center;
-
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  padding: 25px;
+}
+ion-icon{
+  color: $gray-ligth;
+  font-size: 3rem;
 }
 
-#container strong {
+#container h4 {
+  color: $gray-ligth;
   font-size: 20px;
   line-height: 26px;
 }
 
 #container p {
-  font-size: 16px;
+  font-size: 0.9rem;
   line-height: 22px;
-
-  color: #8c8c8c;
-
+  font-weight: 300;
+  color: $gray-ligth;
   margin: 0;
 }
 

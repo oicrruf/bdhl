@@ -19,10 +19,10 @@ ion-col {
   border-radius: 20px;
 }
 .m-credit-shadown {
-  &.-Mastercard {
+  &.-mastercard {
     background-color: $background-card-green;
   }
-  &.-Visa {
+  &.-visa {
     background-color: $background-card-brown;
   }
   height: 250px;
@@ -30,10 +30,10 @@ ion-col {
   position: absolute;
 }
 .m-credit-card {
-  &.-Mastercard {
+  &.-mastercard {
     background-color: $green;
   }
-  &.-Visa {
+  &.-visa {
     background-color: $brown;
   }
   display: flex;

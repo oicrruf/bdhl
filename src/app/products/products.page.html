@@ -10,8 +10,8 @@
     </ion-text>
     <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
       <ion-slide *ngFor="let card of products" style="width: 200px;">
-        <ion-col class="m-credit-shadown -{{card.productBrand}}"></ion-col>
-        <ion-col class="m-credit-card -{{card.productBrand}}">
+        <ion-col class="m-credit-shadown -{{card.productBrand | lowercase}}"></ion-col>
+        <ion-col class="m-credit-card -{{card.productBrand | lowercase}}">
           <a href="/card/{{card.productNumber}}">
             <ion-row class="a-credit-title">
               <ion-img class="a-credit-title -imagotipo" style="pointer-events:none"
@@ -24,7 +24,7 @@
             </ion-row>
             <ion-row class="a-credit-footer">
               <ion-img class="a-credit-footer -partner" style="pointer-events:none"
-                src="assets/images/partners/{{card.productBrand}}.svg"></ion-img>
+                src="assets/images/partners/{{card.productBrand | lowercase}}.svg"></ion-img>
             </ion-row>
           </a>
         </ion-col>

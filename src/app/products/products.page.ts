@@ -12,12 +12,10 @@ export class ProductsPage implements OnInit {
 
   ngOnInit() {
     fetch('assets/data/products.json').then((res) => res.json()).then((json) => {
-      console.log(json);
       this.products = json;
     });
 
     fetch('assets/data/movements.json').then((res) => res.json()).then((json) => {
-      console.log(json);
       this.movements = json;
     });
   }

@@ -1,1 +1,11 @@
-
+.p-config {
+  height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  & ion-button {
+    width: 90vw;
+  }
+}
